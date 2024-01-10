@@ -14,12 +14,13 @@ model Todo {
   id           Int      @id @default(autoincrement())
   topic        String
   description  String
-  status       Status
+  status       Status   @default(Pending)
   deadlineDate DateTime
 }
 
 enum Status {
-  PENDING
-  ACTIVE
-  REJECTED
+  Pending
+  InProgress
+  Completed
+  Failed
 }
